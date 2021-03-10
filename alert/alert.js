@@ -6,9 +6,7 @@ let appData = {
     budget: money,
     timeData: time,
     expenses: {},
-    optionalExpenses: {
-
-    },
+    optionalExpenses: {},
     income: [],
     saving: false
 };
@@ -16,11 +14,10 @@ let appData = {
 for (let i = 0; i < 2; ++i) {
     let a = prompt("Введите обязательную статью расходов в этом месяце"),
         b = prompt("Во сколько обойдется?");
-    if (typeof (a) != null && typeof (b) != null && a != '' && b != '' && a.length < 50){
+    if (typeof (a) != null && typeof (b) != null && a != '' && b != '' && a.length < 50) {
         appData.expenses[a] = b;
         console.log("[log] Success");
-    }
-    else{
+    } else {
         i--;
         console.log("[log] Write error");
     }
@@ -53,5 +50,5 @@ for (let i = 0; i < 2; ++i) {
 //     i++;
 // }while(i<2);
 let days = 30;
-appData.moneyPerDay=appData.budget/days;
+appData.moneyPerDay = appData.budget / days;
 alert("Ежедневный бюджет: " + appData.moneyPerDay);
