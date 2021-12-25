@@ -1,0 +1,26 @@
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 30px;
+  width: 28%;
+}
+
+li:hover {
+  background-color: #e8e8e8;
+  transition: .3s;
+  border-radius: 5px;
+}
+
+li {
+  padding: 5px 0;
+  margin: 5px 0;
+  transition: .3s;
+}
+
+input {
+  margin-right: 10px;
+}

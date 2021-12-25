@@ -1,0 +1,7 @@
+<form [formGroup]="addTaskFrom" (ngSubmit)="addTask()">
+  <div *ngIf="addTaskFrom.get('newTask')!.errors && addTaskFrom.get('newTask')!.touched" class="error">
+    New task can't be empty
+  </div>
+  <input type="text" placeholder="Enter new task" formControlName="newTask" class="form-control">
+  <button type="submit" class="btn btn-primary">Add Task</button>
+</form>

@@ -1,0 +1,14 @@
+<div [formGroup]="tasksForm">
+  <ul formArrayName="tasks">
+    <li *ngFor="let task of taskControls.controls; let i = index">
+      <div [formGroupName]="i">
+        <input type="checkbox" formControlName="isCompleted"
+               (click)="saveTask({task: task.value.task, isCompleted: !task.value.isCompleted, id: task.value.id})">
+        <a [routerLink]="['/admin/task', task.value.id]"
+           [ngStyle]="{'textDecoration': task.value.isCompleted ? 'line-through' : 'none'}">{{task.value.task}}</a>
+      </div>
+    </li>
+    <div *ngIf="!tasksForm.value.tasks.length">Empty List!</div>
+  </ul>
+</div>
+<app-add-task></app-add-task>

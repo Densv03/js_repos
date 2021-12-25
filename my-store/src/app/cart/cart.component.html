@@ -1,0 +1,8 @@
+<h3>Cart</h3>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{item.name}}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+<p *ngIf="!items.length">Cart is empty</p>
+<button (click)="clearCart()" *ngIf="items.length" routerLink="/">Clear Cart</button>

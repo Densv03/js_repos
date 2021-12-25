@@ -1,0 +1,19 @@
+<form [formGroup]="taskDetailForm">
+  <input type="text" formControlName="task" class="form-control"> <br>
+  Done:
+  <input type="checkbox" formControlName="isCompleted"> <br>
+  <button
+    (click)="saveTask()"
+    [routerLink]="'/admin/list'"
+    class="btn btn-secondary">Save
+  </button>
+  <button
+    [routerLink]="'/admin/list'"
+    class="btn btn-secondary">Cancel
+  </button>
+  <button
+    (click)="deleteTask()"
+    [routerLink]="'/admin/list'"
+    class="btn btn-secondary">Delete Task
+  </button>
+</form>

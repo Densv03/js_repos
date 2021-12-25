@@ -1,0 +1,7 @@
+<form [formGroup]="taskDetailForm">
+  <input type="text" formControlName="task">
+  <br>
+  Done:
+  <span *ngIf="taskDetailForm.get('isCompleted')?.value">Yes</span>
+  <span *ngIf="!taskDetailForm.get('isCompleted')!.value">No</span>
+</form>

@@ -1,0 +1,11 @@
+<div [formGroup]="tasksForm">
+  <ul formArrayName="tasks">
+    <li *ngFor="let task of formGroups.controls; let i = index">
+      <div [formGroupName]="i">
+        <input type="checkbox" formControlName="isCompleted">
+        <a [routerLink]="['/user/task', task.value.id]"
+           [ngStyle]="{'textDecoration': task.value.isCompleted ? 'line-through' : 'none'}">{{task.value.task}}</a>
+      </div>
+    </li>
+  </ul>
+</div>
